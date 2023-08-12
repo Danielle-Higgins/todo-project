@@ -34,6 +34,14 @@ function addTask() {
 
     // reset the input
     userInput.value = ""
+
+    check.addEventListener("click", () => {
+        para.style.textDecoration = "line-through"
+    })
+
+    trash.addEventListener("click", () => {
+        task.remove()
+    })
 }
 
 addButton.addEventListener("click", addTask)
