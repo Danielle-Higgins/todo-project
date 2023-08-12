@@ -25,6 +25,10 @@ body {
 .container {
     background-color: #fff;
     padding: 35px 20px;
+    /*
+    When an element is a flex item, the value of min-width doesn't compute to zero. The minimum size of a flex item is equal to the size of its contents. By default, flex items won't shrink below their minimum content size (the length of the longest word or fixed-size element).
+    Allows items inside to shrink and not overflow
+    */
     min-width: 40%;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
