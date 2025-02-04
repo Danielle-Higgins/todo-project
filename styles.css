@@ -53,6 +53,10 @@ img {
 }
 
 /* ----- Form Styles ----- */
+form {
+  margin-bottom: 25px;
+}
+
 .form-control {
   display: flex;
   align-items: center;
@@ -89,6 +93,38 @@ img {
   color: #fff;
   border-radius: 30px;
   cursor: pointer;
+}
+
+/* ----- Todo List Styles ----- */
+ul li {
+  font-size: 1.8rem;
+  padding: 12px 8px 12px 50px;
+  cursor: pointer;
+  position: relative;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  background: url("./img/unchecked.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  top: 12px;
+  left: 8px;
+}
+
+ul li.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background: url("./img/checked.png");
+  background-size: cover;
+  background-position: center;
 }
 
 /* ----- Utility Classes ----- */
