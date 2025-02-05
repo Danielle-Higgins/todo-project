@@ -1,47 +1,51 @@
-// const userInput = document.querySelector("input")
-// const addButton = document.querySelector(".add-button")
-// const todos = document.querySelector(".task-container")
+class TodoList {
+  constructor(form, input, ul) {
+    this.form = document.getElementById(form);
+    this.input = document.getElementById(input);
+    this.todoList = document.getElementById(ul);
 
-// function addTask() {
-//     // create a new task
-//     const task = document.createElement("div")
-//     task.classList.add("task")
+    this.setupEventListners();
+  }
 
-//     // if user doesnt input anything, break out of function
-//     if (userInput.value === "") {
-//         alert("Please enter a task first!")
-//         return
-//     }
+  setupEventListners() {
+    this.form.addEventListener("submit", (e) => this.handleSubmit(e));
+    this.todoList.addEventListener("click", (e) => this.checkTodo(e));
+  }
 
-//     // create paragraph to house value of input
-//     const para = document.createElement("p")
-//     para.textContent = userInput.value
-//     task.appendChild(para)
+  handleSubmit(e) {
+    e.preventDefault();
 
-//     // create a check mark button
-//     const check = document.createElement("button")
-//     check.classList.add("check-mark")
-//     check.innerHTML = " &#10003;"
-//     task.appendChild(check)
+    // grab onto value in input
+    const task = this.input.value.trim();
 
-//     // create a trash can button
-//     const trash = document.createElement("button")
-//     trash.classList.add("trash-can")
-//     trash.innerHTML = "&#128465;"
-//     task.appendChild(trash)
+    // check if input is empty
+    if (!task) return;
+    else this.addTask(task);
 
-//     todos.appendChild(task)
+    // reset input
+    this.input.value = "";
+  }
 
-//     // reset the input
-//     userInput.value = ""
+  addTask(task) {
+    // create a new task
+    const li = document.createElement("li");
+    li.textContent = task;
+    this.todoList.appendChild(li);
 
-//     check.addEventListener("click", () => {
-//         para.style.textDecoration = "line-through"
-//     })
+    const span = document.createElement("span");
+    span.innerText = "\u00d7";
+    li.appendChild(span);
+  }
 
-//     trash.addEventListener("click", () => {
-//         task.remove()
-//     })
-// }
+  checkTodo(e) {
+    // console.log(e.target);
 
-// addButton.addEventListener("click", addTask)
+    if (e.target.tagName === "LI") {
+      e.target.classList.toggle("checked");
+    } else if (e.target.tagName === "SPAN") {
+      e.target.parentElement.remove();
+    }
+  }
+}
+
+const todo = new TodoList("form", "todo-input", "list-container");

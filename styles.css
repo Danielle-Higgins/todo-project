@@ -127,6 +127,23 @@ ul li.checked::before {
   background-position: center;
 }
 
+ul li span {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  color: #000;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+ul li span:hover {
+  background-color: rgb(205, 201, 201);
+}
+
 /* ----- Utility Classes ----- */
 .container {
   width: 100%;
