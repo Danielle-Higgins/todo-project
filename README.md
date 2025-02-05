@@ -1,6 +1,6 @@
 # Todo Project: <a target="_blank" href="https://danielle-higgins.github.io/todo-project/">Visit Here</a>
 
-<img src="[https://github.com/Danielle-Higgins/todo-project/blob/main/todo-preview.png](https://github.com/Danielle-Higgins/todo-project/blob/main/img/preview-img.png)">
+<img src="https://github.com/Danielle-Higgins/todo-project/blob/main/img/preview-img.png">
 
 A todo list to keep track of what you need to get done.
 
