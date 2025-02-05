@@ -5,6 +5,7 @@ class TodoList {
     this.todoList = document.getElementById(ul);
 
     this.setupEventListners();
+    this.showTodo();
   }
 
   setupEventListners() {
@@ -35,16 +36,29 @@ class TodoList {
     const span = document.createElement("span");
     span.innerText = "\u00d7";
     li.appendChild(span);
+
+    this.saveData();
   }
 
   checkTodo(e) {
     // console.log(e.target);
 
+    // checked what was clicked on inside of ul
     if (e.target.tagName === "LI") {
       e.target.classList.toggle("checked");
+      this.saveData();
     } else if (e.target.tagName === "SPAN") {
       e.target.parentElement.remove();
+      this.saveData();
     }
+  }
+
+  saveData() {
+    localStorage.setItem("data", this.todoList.innerHTML);
+  }
+
+  showTodo() {
+    this.todoList.innerHTML = localStorage.getItem("data");
   }
 }
 

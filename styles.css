@@ -62,7 +62,7 @@ form {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background-color: rgb(205, 201, 201);
+  background-color: rgb(228, 220, 220);
   border-radius: 30px;
   padding-left: 10px;
 }
@@ -93,6 +93,11 @@ form {
   color: #fff;
   border-radius: 30px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-control .add-btn:hover {
+  background-color: rgb(60, 86, 205);
 }
 
 /* ----- Todo List Styles ----- */
